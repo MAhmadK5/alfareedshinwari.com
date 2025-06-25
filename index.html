@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/2.png">
+    <title>Al-Fareed Shinwari</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS variables for consistent theming */
+        :root {
+            --color-goldenrod: #d4af37; /* Consistent goldenrod color */
+            --color-olive: #808000; /* Olive for sub-text */
+        }
+
+        /* Base Body Styling - using Lato font */
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+        }
+
+        /* Custom Tailwind-like utility classes for defined colors */
+        .text-goldenrod {
+            color: var(--color-goldenrod);
+        }
+        .bg-goldenrod {
+            background-color: var(--color-goldenrod);
+        }
+        .border-goldenrod {
+            border-color: var(--color-goldenrod);
+        }
+        .text-olive {
+            color: var(--color-olive);
+        }
+
+        /* Hover effects for navigation links */
+        .nav-link-hover:hover {
+            background-color: var(--color-goldenrod);
+            color: #000; /* Text turns black on hover */
+        }
+
+        /* Specific font and text shadow for main titles */
+        .menu-title, .section-heading {
+            font-family: 'Cinzel Decorative', serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+        }
+
+        /* Background patterns and overlays for visual depth */
+        .background-pattern {
+            background-image: url('images/p27.png'); /* Placeholder for a subtle repeating pattern */
+            background-repeat: repeat;
+            background-size: 200px;
+            opacity: 0.65; /* More visible than initial design */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2; /* Send to back, below mandala */
+        }
+        .mandala-overlay {
+            background-image: url('images/26.jpg'); /* Placeholder for a larger mandala graphic */
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+            opacity: 0.333; /* More visible than initial design */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%; /* Responsive width */
+            height: 90%; /* Responsive height */
+            max-width: 800px; /* Max size for desktop */
+            max-height: 800px;
+            z-index: -3; /* Even further back */
+        }
+
+        /* Responsive media styling for images and videos */
+        .responsive-media {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover; /* Ensures media covers its space without distortion */
+        }
+
+        /* Grid for image and video galleries for responsive layout */
+        .image-gallery, .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Auto-fitting columns with min-width */
+            gap: 1rem; /* Space between grid items */
+            justify-items: center; /* Center items horizontally in grid */
+            align-items: center; /* Center items vertically in grid */
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes scaleIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+</style>
+</head>
+<body class="min-h-screen relative">
+    <div class="background-pattern"></div>
+    <div class="mandala-overlay"></div>
+
+    <!-- Navigation -->
+    <div class="bg-black text-center py-4 relative z-10 shadow-lg">
+        <nav class="container mx-auto flex flex-col sm:flex-row justify-center items-center">
+            <a href="MENU.html" class="text-goldenrod text-lg font-bold mx-2 md:mx-4 px-3 py-2 rounded-lg transition-all duration-300 nav-link-hover focus:outline-none focus:ring-2 focus:ring-goldenrod focus:ring-opacity-50">MENU</a>
+            <a href="#about" class="text-goldenrod text-lg font-bold mx-2 md:mx-4 px-3 py-2 rounded-lg transition-all duration-300 nav-link-hover focus:outline-none focus:ring-2 focus:ring-goldenrod focus:ring-opacity-50">About Us</a>
+            <a href="#location" class="text-goldenrod text-lg font-bold mx-2 md:mx-4 px-3 py-2 rounded-lg transition-all duration-300 nav-link-hover focus:outline-none focus:ring-2 focus:ring-goldenrod focus:ring-opacity-50">Location</a>
+            <a href="#contact" class="text-goldenrod text-lg font-bold mx-2 md:mx-4 px-3 py-2 rounded-lg transition-all duration-300 nav-link-hover focus:outline-none focus:ring-2 focus:ring-goldenrod focus:ring-opacity-50">Contact Us</a>
+        </nav>
+    </div>
+
+    <!-- Banner Image - subtle fade in on load -->
+    <img src="images/p18.png" alt="Al Fareed Shinwari Banner" class="block w-full h-auto mx-auto my-0 p-0 animate-fadeIn relative z-0">
+
+    <!-- About Section -->
+    <h1 id="about" class="text-center bg-black text-goldenrod py-4 section-heading relative z-10 animate-slideInUp delay-100">ABOUT US</h1>
+    <div class="container mx-auto p-5 md:p-8 bg-gray-900 rounded-lg shadow-xl mb-10 relative z-10 animate-scaleIn delay-200">
+        <img src="images/2.png" alt="Logo" class="h-40 w-auto float-left mr-5 mb-3 rounded-lg shadow-lg responsive-media border-2 border-goldenrod p-1 transform transition-transform duration-300 hover:scale-105">
+        <p class="text-left text-gray-200 leading-relaxed text-lg">
+            <span class="font-bold text-goldenrod">Al-Fareed Shinwari:</span> "Al" is an Arabic slang word and "Fareed" refers to the Owner of the Al-Fareed group.<br><br>
+            "Shinwari" cuisine, specifically "Shinwari Karahi," is a type of Pashtun food, particularly associated with the Shinwari tribe.<br><br>
+            Together, we are a Shinwari & Fast Food Restaurant with the best taste and services.<br><br>
+            We are located in the heart of District Layyah, Chowk Azam — Founded in 2024.
+        </p>
+        <div class="clear-both"></div>
+    </div>
+
+    <!-- Image Gallery -->
+    <h1 class="text-center bg-black text-goldenrod py-4 section-heading relative z-10 animate-slideInUp delay-300">Gallery</h1>
+    <div class="image-gallery container mx-auto p-4 md:p-8 mb-10 relative z-10">
+        <img src="images/p4.png" alt="Dish 1" class="w-full max-w-sm rounded-lg shadow-xl m-2 responsive-media transform transition-transform duration-300 hover:scale-105 animate-scaleIn delay-400">
+        <img src="images/p8.webp" alt="Dish 2" class="w-full max-w-sm rounded-lg shadow-xl m-2 responsive-media transform transition-transform duration-300 hover:scale-105 animate-scaleIn delay-500">
+        <img src="images/p7.webp" alt="Dish 3" class="w-full max-w-sm rounded-lg shadow-xl m-2 responsive-media transform transition-transform duration-300 hover:scale-105 animate-scaleIn delay-600">
+    </div>
+
+    <!-- Video Gallery -->
+    <div class="video-gallery container mx-auto p-4 md:p-8 mb-10 relative z-10">
+        <video loop muted autoplay playsinline src="videos/v1.mp4" class="w-full max-w-sm rounded-lg shadow-xl m-2 responsive-media animate-scaleIn delay-700"></video>
+        <video loop muted autoplay playsinline src="videos/v2.mp4" class="w-full max-w-sm rounded-lg shadow-xl m-2 responsive-media animate-scaleIn delay-800"></video>
+        <video loop muted autoplay playsinline src="videos/v3.mp4" class="w-full max-w-sm rounded-lg shadow-xl m-2 responsive-media animate-scaleIn delay-900"></video>
+        <video loop muted autoplay playsinline src="videos/v4.mp4" class="w-full max-w-sm rounded-lg shadow-xl m-2 responsive-media animate-scaleIn delay-1000"></video>
+    </div>
+
+    <!-- Location Section -->
+    <h1 id="location" class="text-center bg-black text-goldenrod py-4 section-heading relative z-10 animate-slideInUp delay-100">LOCATION</h1>
+    <div class="text-center p-5 md:p-8 bg-gray-900 rounded-lg shadow-xl mb-10 relative z-10 animate-scaleIn delay-200">
+        <a href="https://maps.app.goo.gl/z4bsMxedhNJ9R1LR8" target="_blank" class="block w-full max-w-xl mx-auto">
+            <img src="images/p9.jpg" alt="Map" class="w-full h-auto border-2 border-goldenrod p-1 rounded-lg shadow-lg responsive-media transform transition-transform duration-300 hover:scale-105">
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-black text-goldenrod py-10 px-5 text-center mt-10 relative z-10 shadow-inner animate-fadeIn delay-300">
+        <h1 class="text-3xl font-bold mb-4">Connect with Us</h1>
+
+        <!-- Social Buttons -->
+        <div class="flex justify-center items-center flex-wrap gap-4 mt-5">
+            <a href="https://www.facebook.com/share/14EMp8WyoDi/?mibextid=wwXIfr" class="block">
+                <img src="images/12.svg" alt="Facebook" class="h-16 w-16 bg-white p-2 rounded-full transition-transform duration-300 hover:scale-110 shadow-lg">
+            </a>
+            <a href="https://www.instagram.com/alfareed.shinwari" class="block">
+                <img src="images/p17.jpg" alt="Instagram" class="h-16 w-16 bg-white p-2 rounded-full transition-transform duration-300 hover:scale-110 shadow-lg">
+            </a>
+            <a href="https://www.tiktok.com/@alfareedshinwari" class="block">
+                <img src="images/p16.png" alt="TikTok" class="h-16 w-16 bg-white p-2 rounded-full transition-transform duration-300 hover:scale-110 shadow-lg">
+            </a>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="mt-8 text-white">
+            <h2 class="text-2xl font-semibold text-goldenrod mb-2">Contact Us:</h2>
+            <h4 class="text-xl">Call Us at: <b style="color: yellow;"> +92 327 2000 764</b></h4>
+            <h4 class="text-xl">Call Us at: <b style="color: yellow;"> +92 300 2554 467</b></h4>
+            <h4 class="text-xl">Call Us at:<b style="color: yellow;">  +92 337 1656 836 </b></h4>
+            <h4 class="text-xl">Email Us at:<b style="color: yellow;">  alfareedshinwari@gmail.com</h4>
+        </div>
+
+        <p class="mt-10 text-gray-400 text-sm">
+            &copy; 2025 Al-Fareed Group. <i class="italic">All rights reserved.</i><br>
+            Powered by <i> SZABIST (Shaheed Zulfiqar Ali Bhutto Institute of Science and Technology)</i> - Islamabad--CS Dept.
+        </p>
+    </footer>
+
+</body>
+</html>
